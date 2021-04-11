@@ -25,7 +25,7 @@ ENV PATH /var/lib/apache-jmeter-$JMETER_VERSION/bin:$PATH
 WORKDIR /var/workload/acmeair-nodejs/
 
 ADD ./jmeter /var/workload/acmeair-nodejs/
-RUN wget https://json-simple.googlecode.com/files/json-simple-1.1.1.jar
+RUN wget --no-check-certificate https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/json-simple/json-simple-1.1.1.jar 
 
 RUN \
 	mv json-simple-1.1.1.jar /var/lib/apache-jmeter-$JMETER_VERSION/lib/ext/.;\
