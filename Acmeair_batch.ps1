@@ -12,7 +12,8 @@ if($model -eq 1)
         $containerStat = $getPsInfo[1]
         $port = $containerStat.split($separators)
         $uri = "http://localhost:"+$port[1]+"/rest/api/loader/load?numCustomers=10000"
-        Invoke-WebRequest -UseBasicParsing http://localhost:49158/rest/api/loader/load?numCustomers=10000
+        start-sleep -s 5
+        Invoke-WebRequest -UseBasicParsing $uri
     }
 }
 else
