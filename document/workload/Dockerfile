@@ -33,8 +33,8 @@ RUN \
 	cp ./properties/*.properties /var/lib/apache-jmeter-$JMETER_VERSION/bin/.;\
 	chmod 777 *.sh;
 
-ENV NUM_THREAD 2
-ENV LOOP_COUNT 100
+ENV NUM_THREAD 1
+ENV LOOP_COUNT 700
 ENV USE_PURE_IDS true
 #ENV CONTEXT_ROOT 
 #APP_PORT_9080_TCP_ADDR
