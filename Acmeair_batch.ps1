@@ -7,12 +7,12 @@ if($model -eq 1)
         $mongo = "mongo_"+ $i
         $acmeair = "acmeair_web_" + $i
         docker run --name $mongo -d -P mongo
-        docker run -d -P --name $acmeair --link $mongo":mongo" acmeair/web 
+        docker run -d -P --name $acmeair --link $mongo":mongo" copyright.azurecr.io/acmeair/web 
         $getPsInfo = docker ps
         $containerStat = $getPsInfo[1]
         $port = $containerStat.split($separators)
         $uri = "http://localhost:"+$port[1]+"/rest/api/loader/load?numCustomers=10000"
-        start-sleep -s 5
+        start-sleep -s 2
         Invoke-WebRequest -UseBasicParsing $uri
     }
 }
